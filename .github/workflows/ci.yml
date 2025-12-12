@@ -81,6 +81,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      
+      - name: Verify package-lock.json exists
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Files in root:"
+          ls -la
+          if [ ! -f package-lock.json ]; then
+            echo "ERROR: package-lock.json not found!"
+            exit 1
+          fi
+          echo "package-lock.json found"
+          ls -lh package-lock.json
       
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -112,6 +126,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      
+      - name: Verify package-lock.json exists
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Files in root:"
+          ls -la
+          if [ ! -f package-lock.json ]; then
+            echo "ERROR: package-lock.json not found!"
+            exit 1
+          fi
+          echo "package-lock.json found"
+          ls -lh package-lock.json
       
       - name: Setup Node.js
         uses: actions/setup-node@v6
