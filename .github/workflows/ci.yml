@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD 파이프라인
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: Test (Node ${{ matrix.node-version }})
+    name: 테스트 (Node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -74,7 +74,7 @@ jobs:
           retention-days: 30
 
   build:
-    name: Build
+    name: 빌드
     runs-on: ubuntu-latest
     
     steps:
@@ -119,7 +119,7 @@ jobs:
           retention-days: 7
 
   storybook:
-    name: Storybook Build & Test
+    name: Storybook 빌드 및 테스트
     runs-on: ubuntu-latest
     
     steps:
@@ -190,7 +190,7 @@ jobs:
         continue-on-error: true
 
   deploy-storybook:
-    name: Deploy Storybook to GitHub Pages
+    name: Storybook GitHub Pages 배포
     runs-on: ubuntu-latest
     needs: [test, build, storybook]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
