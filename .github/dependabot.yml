@@ -8,9 +8,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "npm"
     commit-message:
       prefix: "chore"
       include: "scope"
@@ -41,9 +38,6 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    labels:
-      - "dependencies"
-      - "github-actions"
     commit-message:
       prefix: "ci"
       include: "scope"
