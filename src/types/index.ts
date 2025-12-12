@@ -13,7 +13,11 @@ export type Size = 'sm' | 'md' | 'lg'
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'danger'
 
 /**
+ * Badge Variant
+ */
+export type BadgeVariant = 'solid' | 'subtle' | 'outline'
+
+/**
  * 공통 Variant (Alert, Toast 등에서 사용)
  */
 export type Variant = 'info' | 'success' | 'warning' | 'error'
-

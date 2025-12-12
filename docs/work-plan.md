@@ -40,11 +40,11 @@
   - 접근성 테스트 (aria-label, role)
 
 #### 1.3 Badge 컴포넌트
-- [ ] Badge 컴포넌트 구현
+- [x] Badge 컴포넌트 구현
   - Variants: solid, subtle (기본), outline
   - Sizes: sm (기본), md
-- [ ] Storybook Stories 작성
-- [ ] 테스트 작성
+- [x] Storybook Stories 작성
+- [x] 테스트 작성
   - 렌더링 테스트
   - 접근성 테스트 (aria-hidden for decorative icons)
 
