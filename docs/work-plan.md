@@ -185,18 +185,18 @@
 ### 작업 범위
 
 #### 3.1 Alert 컴포넌트
-- [ ] Alert 컴포넌트 구현
+- [x] Alert 컴포넌트 구현
   - Variants: info, success, warning, error
   - dismissible 옵션 지원
   - 아이콘, 제목, 설명, 액션 슬롯 지원
-- [ ] 접근성 구현
+- [x] 접근성 구현
   - role="status" (기본)
   - role="alert" (긴급 오류)
-- [ ] Storybook Stories 작성
+- [x] Storybook Stories 작성
   - 모든 variant 예제
   - dismissible 동작 데모
   - A11y Addon 검사
-- [ ] 테스트 작성
+- [x] 테스트 작성
   - 렌더링 테스트
   - dismiss 동작 테스트
   - 접근성 테스트
