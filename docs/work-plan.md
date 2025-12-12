@@ -88,23 +88,23 @@
 - [x] 테스트 보완
 
 #### 2.2 Modal 컴포넌트
-- [ ] Modal 컴포넌트 구현
+- [x] Modal 컴포넌트 구현
   - React Portal 사용
   - Body 스크롤 방지
   - 오버레이 클릭 처리 (기본적으로 닫히지 않음)
-- [ ] Focus Trap 구현
+- [x] Focus Trap 구현
   - 열릴 때 첫 번째 포커스 가능 요소로 포커스 이동
   - Tab 키로 모달 내부 순환
   - ESC 키로 닫기
   - 닫힐 때 트리거 요소로 포커스 복귀
-- [ ] 접근성 구현
+- [x] 접근성 구현
   - role="dialog"
   - aria-modal="true"
   - aria-labelledby (헤더 제목 연결)
-- [ ] Storybook Stories 작성
+- [x] Storybook Stories 작성
   - 다양한 크기 및 콘텐츠 예제
   - A11y Addon 검사
-- [ ] 테스트 작성
+- [x] 테스트 작성
   - Portal 렌더링 테스트
   - Focus Trap 테스트
   - ESC 키 동작 테스트

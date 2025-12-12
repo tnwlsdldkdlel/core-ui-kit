@@ -177,6 +177,9 @@ export const transitions = {
 
 /**
  * Z-index 토큰
+ *
+ * Storybook UI의 z-index는 일반적으로 9999 이하이므로,
+ * Modal은 10000 이상의 값을 사용하여 충돌을 방지합니다.
  */
 export const zIndex = {
   base: 0,
@@ -187,6 +190,9 @@ export const zIndex = {
   modal: 1050,
   popover: 1060,
   tooltip: 1070,
+  // Storybook UI와 충돌 방지를 위한 높은 z-index 값
+  storybookModalBackdrop: 10000,
+  storybookModal: 10001,
 } as const
 
 /**

@@ -2,3 +2,20 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
+<style>
+  /* Storybook 환경에서 Modal Portal이 정상 작동하도록 보장 */
+  body#storybook-root-body,
+  body[id*="storybook"] {
+    position: relative !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+  
+  /* Storybook iframe 내부 body 스타일 보장 */
+  iframe[id*="storybook-preview"] body {
+    position: relative !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+</style>
+
