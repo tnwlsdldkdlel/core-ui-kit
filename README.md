@@ -2,6 +2,12 @@
 
 재사용 가능한 UI 컴포넌트 라이브러리
 
+## 📖 Storybook
+
+컴포넌트 문서와 예제를 확인하세요:
+
+🔗 **[Storybook 라이브 데모](https://tnwlsdldkdlel.github.io/core-ui-kit/)**
+
 ## 기술 스택
 
 - **React** - 컴포넌트 기반 UI 개발
