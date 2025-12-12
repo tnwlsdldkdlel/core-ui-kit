@@ -18,16 +18,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       
       - name: Verify package-lock.json exists
         run: |
+          echo "Current directory: $(pwd)"
+          echo "Files in root:"
+          ls -la
           if [ ! -f package-lock.json ]; then
             echo "ERROR: package-lock.json not found!"
-            ls -la
+            echo "Checking git status:"
+            git status
+            echo "Checking if file exists in git:"
+            git ls-files package-lock.json
             exit 1
           fi
           echo "package-lock.json found"
           ls -lh package-lock.json
+          head -5 package-lock.json
       
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
