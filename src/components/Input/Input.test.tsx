@@ -108,11 +108,12 @@ describe('Input', () => {
 
     it('readOnly 상태일 때 입력이 불가능하다', async () => {
       const user = userEvent.setup()
-      render(<Input id="test-input" readOnly defaultValue="읽기 전용" />)
-      const input = screen.getByRole('textbox')
+      render(<Input id="test-input" readOnly value="읽기 전용" onChange={() => {}} />)
+      const input = screen.getByRole('textbox') as HTMLInputElement
 
+      expect(input.value).toBe('읽기 전용')
       await user.type(input, '추가')
-      expect(input).toHaveValue('읽기 전용')
+      expect(input.value).toBe('읽기 전용')
     })
 
     it('포커스가 가능하다', async () => {
@@ -201,6 +202,93 @@ describe('Input', () => {
       render(<Input id="test-input" />)
       const input = screen.getByRole('textbox')
       expect(input).not.toHaveAttribute('aria-describedby')
+    })
+  })
+
+  describe('Adornments', () => {
+    it('prefix가 렌더링된다', () => {
+      render(<Input id="test-input" prefix="@" />)
+      const prefix = screen.getByText('@')
+      expect(prefix).toBeInTheDocument()
+    })
+
+    it('suffix가 렌더링된다', () => {
+      render(<Input id="test-input" suffix="kg" />)
+      const suffix = screen.getByText('kg')
+      expect(suffix).toBeInTheDocument()
+    })
+
+    it('prefix와 suffix가 함께 렌더링된다', () => {
+      render(<Input id="test-input" prefix="$" suffix=".00" />)
+      expect(screen.getByText('$')).toBeInTheDocument()
+      expect(screen.getByText('.00')).toBeInTheDocument()
+    })
+
+    it('prefix가 있을 때 input의 padding이 조정된다', () => {
+      render(<Input id="test-input" prefix="@" />)
+      const input = screen.getByRole('textbox')
+      expect(input).toHaveClass('pl-10')
+    })
+
+    it('suffix가 있을 때 input의 padding이 조정된다', () => {
+      render(<Input id="test-input" suffix="kg" />)
+      const input = screen.getByRole('textbox')
+      expect(input).toHaveClass('pr-10')
+    })
+  })
+
+  describe('Clear 버튼', () => {
+    it('clearable이 true이고 값이 있을 때 Clear 버튼이 표시된다', () => {
+      render(<Input id="test-input" clearable defaultValue="테스트" />)
+      const clearButton = screen.getByLabelText('입력 내용 지우기')
+      expect(clearButton).toBeInTheDocument()
+    })
+
+    it('값이 없을 때 Clear 버튼이 표시되지 않는다', () => {
+      render(<Input id="test-input" clearable />)
+      expect(screen.queryByLabelText('입력 내용 지우기')).not.toBeInTheDocument()
+    })
+
+    it('disabled일 때 Clear 버튼이 표시되지 않는다', () => {
+      render(<Input id="test-input" clearable defaultValue="테스트" disabled />)
+      expect(screen.queryByLabelText('입력 내용 지우기')).not.toBeInTheDocument()
+    })
+
+    it('readOnly일 때 Clear 버튼이 표시되지 않는다', () => {
+      render(<Input id="test-input" clearable defaultValue="테스트" readOnly />)
+      expect(screen.queryByLabelText('입력 내용 지우기')).not.toBeInTheDocument()
+    })
+
+    it('Clear 버튼 클릭 시 값이 지워진다', async () => {
+      const user = userEvent.setup()
+      render(<Input id="test-input" clearable defaultValue="테스트" />)
+      const input = screen.getByRole('textbox') as HTMLInputElement
+      const clearButton = screen.getByLabelText('입력 내용 지우기')
+
+      expect(input.value).toBe('테스트')
+
+      await user.click(clearButton)
+      expect(input.value).toBe('')
+    })
+
+    it('Clear 버튼이 접근 가능하다', () => {
+      render(<Input id="test-input" clearable defaultValue="테스트" />)
+      const clearButton = screen.getByLabelText('입력 내용 지우기')
+      expect(clearButton).toBeInTheDocument()
+      expect(clearButton).toHaveAttribute('type', 'button')
+      expect(clearButton).toHaveAttribute('aria-label', '입력 내용 지우기')
+    })
+
+    it('Clear 버튼 클릭 시 onChange가 호출된다', async () => {
+      const user = userEvent.setup()
+      const handleChange = vi.fn()
+      render(
+        <Input id="test-input" clearable defaultValue="테스트" onChange={handleChange} />
+      )
+      const clearButton = screen.getByLabelText('입력 내용 지우기')
+
+      await user.click(clearButton)
+      expect(handleChange).toHaveBeenCalled()
     })
   })
 })

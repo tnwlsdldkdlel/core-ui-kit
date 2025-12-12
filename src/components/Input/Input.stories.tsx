@@ -46,6 +46,18 @@ const meta: Meta<typeof Input> = {
       control: 'text',
       description: 'Helper 텍스트 (state가 default일 때 표시)',
     },
+    prefix: {
+      control: 'text',
+      description: 'Prefix Adornment (input 앞에 표시되는 요소)',
+    },
+    suffix: {
+      control: 'text',
+      description: 'Suffix Adornment (input 뒤에 표시되는 요소)',
+    },
+    clearable: {
+      control: 'boolean',
+      description: 'Clear 버튼 표시 여부',
+    },
   },
 }
 
@@ -211,6 +223,114 @@ export const WithLabel: Story = {
           type="password"
           state="error"
           errorMessage="비밀번호는 8자 이상이어야 합니다"
+        />
+      </div>
+    </div>
+  ),
+}
+
+/**
+ * Prefix Adornment
+ */
+export const WithPrefix: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <div>
+        <Label htmlFor="input-prefix-icon">아이콘 Prefix</Label>
+        <Input
+          id="input-prefix-icon"
+          prefix={
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+          }
+          placeholder="사용자 이름"
+        />
+      </div>
+      <div>
+        <Label htmlFor="input-prefix-text">텍스트 Prefix</Label>
+        <Input
+          id="input-prefix-text"
+          prefix="$"
+          placeholder="금액"
+        />
+      </div>
+    </div>
+  ),
+}
+
+/**
+ * Suffix Adornment
+ */
+export const WithSuffix: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <div>
+        <Label htmlFor="input-suffix-icon">아이콘 Suffix</Label>
+        <Input
+          id="input-suffix-icon"
+          suffix={
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          }
+          placeholder="시간"
+        />
+      </div>
+      <div>
+        <Label htmlFor="input-suffix-text">텍스트 Suffix</Label>
+        <Input
+          id="input-suffix-text"
+          suffix="kg"
+          placeholder="무게"
+        />
+      </div>
+    </div>
+  ),
+}
+
+/**
+ * Clear 버튼
+ */
+export const Clearable: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <div>
+        <Label htmlFor="input-clearable">Clear 버튼</Label>
+        <Input
+          id="input-clearable"
+          clearable
+          placeholder="입력 후 Clear 버튼 클릭"
+          defaultValue="입력된 값"
+        />
+      </div>
+      <div>
+        <Label htmlFor="input-clearable-prefix">Prefix + Clear 버튼</Label>
+        <Input
+          id="input-clearable-prefix"
+          prefix="@"
+          clearable
+          placeholder="사용자 이름"
         />
       </div>
     </div>

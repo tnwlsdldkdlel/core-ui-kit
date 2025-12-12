@@ -81,11 +81,11 @@
 ### 작업 범위
 
 #### 2.1 Input 컴포넌트 (고급 기능)
-- [ ] Prefix/Suffix Adornments 구현
-- [ ] Clear 버튼 기능 (선택)
-- [ ] Error Text 표시 및 ARIA 속성 연결
-- [ ] Storybook Stories 업데이트
-- [ ] 테스트 보완
+- [x] Prefix/Suffix Adornments 구현
+- [x] Clear 버튼 기능 (선택)
+- [x] Error Text 표시 및 ARIA 속성 연결
+- [x] Storybook Stories 업데이트
+- [x] 테스트 보완
 
 #### 2.2 Modal 컴포넌트
 - [ ] Modal 컴포넌트 구현
