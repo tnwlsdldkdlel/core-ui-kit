@@ -189,16 +189,6 @@ src/
 - **포커스 관리**: Focus Trap 및 포커스 복귀 지원
 - **색상 대비**: WCAG AA 기준 준수
 
-## 기여하기
-
-이 프로젝트에 기여하고 싶으시다면:
-
-1. 이 저장소를 포크하세요
-2. 새로운 기능 브랜치를 생성하세요 (`git checkout -b feat/amazing-feature`)
-3. 변경사항을 커밋하세요 (`git commit -m 'feat: Add amazing feature'`)
-4. 브랜치에 푸시하세요 (`git push origin feat/amazing-feature`)
-5. Pull Request를 생성하세요
-
 ## 라이선스
 
 MIT

@@ -1,4 +1,4 @@
-import { forwardRef, type ReactNode } from 'react'
+import { forwardRef, memo, type ReactNode } from 'react'
 import { type BadgeVariant, type Size } from '../../types'
 
 export interface BadgeProps
@@ -28,7 +28,7 @@ export interface BadgeProps
  *
  * 상태나 카테고리를 표시하는 작은 뱃지 컴포넌트입니다.
  */
-export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
+const BadgeComponent = forwardRef<HTMLSpanElement, BadgeProps>(
   (
     {
       variant = 'subtle',
@@ -75,5 +75,8 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   }
 )
 
-Badge.displayName = 'Badge'
+BadgeComponent.displayName = 'Badge'
+
+// 성능 최적화: props가 변경되지 않으면 리렌더링 방지
+export const Badge = memo(BadgeComponent)
 

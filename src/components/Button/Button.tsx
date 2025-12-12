@@ -1,4 +1,4 @@
-import { forwardRef, type ReactNode } from 'react'
+import { forwardRef, memo, type ReactNode } from 'react'
 import { type ButtonVariant, type Size } from '../../types'
 
 export interface ButtonProps
@@ -37,7 +37,7 @@ export interface ButtonProps
  *
  * 다양한 variant, size, state를 지원하는 버튼 컴포넌트입니다.
  */
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       variant = 'primary',
@@ -127,5 +127,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 )
 
-Button.displayName = 'Button'
+ButtonComponent.displayName = 'Button'
+
+// 성능 최적화: props가 변경되지 않으면 리렌더링 방지
+export const Button = memo(ButtonComponent)
 
