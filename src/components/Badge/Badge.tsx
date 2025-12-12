@@ -1,5 +1,5 @@
 import { forwardRef, type ReactNode } from 'react'
-import { type BadgeVariant } from '../../types'
+import { type BadgeVariant, type Size } from '../../types'
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement> {
@@ -9,10 +9,10 @@ export interface BadgeProps
    */
   variant?: BadgeVariant
   /**
-   * Badge 크기
+   * Badge 크기 (lg는 지원하지 않음)
    * @default 'sm'
    */
-  size?: 'sm' | 'md'
+  size?: Exclude<Size, 'lg'>
   /**
    * Badge 내용
    */

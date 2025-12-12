@@ -71,7 +71,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const hasHelperText = state === 'error' ? errorMessage : helperText
 
     return (
-      <>
+      <div className="w-full">
         <input
           ref={ref}
           id={id}
@@ -92,7 +92,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             {state === 'error' ? errorMessage : helperText}
           </p>
         )}
-      </>
+      </div>
     )
   }
 )
