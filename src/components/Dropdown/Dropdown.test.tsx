@@ -5,8 +5,8 @@ import { Dropdown } from './Dropdown'
 import type { DropdownOption } from './Dropdown'
 
 // Portal을 테스트하기 위해 document.body를 확인
-const getDropdownContentFromBody = () => {
-  return document.body.querySelector('[role="listbox"]')
+const getDropdownContentFromBody = (): HTMLElement | null => {
+  return document.body.querySelector('[role="listbox"]') as HTMLElement | null
 }
 
 const basicOptions: DropdownOption[] = [
@@ -374,7 +374,7 @@ describe('Dropdown', () => {
         expect(options.length).toBeGreaterThan(0)
       })
 
-      const listbox = getDropdownContentFromBody() as HTMLElement
+      const listbox = getDropdownContentFromBody()
       if (listbox) {
         // listbox에 포커스 주기
         listbox.focus()
