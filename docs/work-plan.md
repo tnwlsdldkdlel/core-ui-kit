@@ -141,34 +141,33 @@
   - 포커스 이동 시 자동 스크롤
 
 #### 2.4 Tabs 컴포넌트
-- [ ] Tabs 컴포넌트 구현
+- [x] Tabs 컴포넌트 구현
   - TabsRoot, TabsList, TabsTrigger, TabsContent 구조
   - Controlled/Uncontrolled 상태 지원
-- [ ] 키보드 상호작용 구현
+- [x] 키보드 상호작용 구현
   - ArrowLeft/ArrowRight: 탭 탐색 (Roving Tabindex)
   - Home/End: 첫/마지막 탭으로 이동
   - Enter/Space: 탭 활성화
-- [ ] 접근성 구현
+- [x] 접근성 구현
   - role="tablist"
   - role="tab" + aria-selected
   - role="tabpanel"
-- [ ] Storybook Stories 작성
+- [x] Storybook Stories 작성
   - 다양한 탭 구성
   - Controlled/Uncontrolled 예제
   - A11y Addon 검사
-- [ ] 테스트 작성
+- [x] 테스트 작성
   - 탭 전환 테스트
   - 키보드 내비게이션 테스트
   - Controlled/Uncontrolled 상태 테스트
   - 접근성 테스트
 
 ### 완료 기준 (Definition of Done)
-- [x] Modal, Dropdown 컴포넌트 구현 완료
-- [ ] Tabs 컴포넌트 구현 완료
-- [x] Modal, Dropdown의 포커스 관리 및 키보드 내비게이션 정상 작동
-- [x] Modal, Dropdown의 Storybook Docs 페이지 완성
-- [x] Modal, Dropdown의 필수 상호작용 시나리오 테스트 통과
-- [x] Modal, Dropdown의 A11y Addon 검사 통과
+- [x] Modal, Dropdown, Tabs 컴포넌트 구현 완료
+- [x] 모든 컴포넌트의 포커스 관리 및 키보드 내비게이션 정상 작동
+- [x] 모든 컴포넌트의 Storybook Docs 페이지 완성
+- [x] 모든 컴포넌트의 필수 상호작용 시나리오 테스트 통과
+- [x] 모든 컴포넌트의 A11y Addon 검사 통과
 - [ ] 코드 리뷰 및 리팩토링 완료
 
 ### 예상 기간
