@@ -49,21 +49,21 @@
   - 접근성 테스트 (aria-hidden for decorative icons)
 
 #### 1.4 Input 컴포넌트 (기본)
-- [ ] 기본 Input 컴포넌트 구현
+- [x] 기본 Input 컴포넌트 구현
   - States: Default, Focused, Error, Success, Disabled, ReadOnly
   - Sizes: sm, md (기본), lg
-- [ ] Label 및 Helper Text 구조
-- [ ] Storybook Stories 작성
-- [ ] 테스트 작성
+- [x] Label 및 Helper Text 구조
+- [x] Storybook Stories 작성
+- [x] 테스트 작성
   - 렌더링 테스트
   - 포커스 관리 테스트
   - 접근성 테스트 (label-id 연결, aria-describedby, aria-invalid)
 
 ### 완료 기준 (Definition of Done)
-- [ ] Button, Badge, Input 컴포넌트 구현 완료
-- [ ] 각 컴포넌트의 Storybook Docs 페이지 완성
-- [ ] 필수 상호작용 시나리오 테스트 통과
-- [ ] A11y Addon 검사 통과
+- [x] Button, Badge, Input 컴포넌트 구현 완료
+- [x] 각 컴포넌트의 Storybook Docs 페이지 완성
+- [x] 필수 상호작용 시나리오 테스트 통과
+- [x] A11y Addon 검사 통과
 - [ ] 코드 리뷰 및 리팩토링 완료
 
 ### 예상 기간
