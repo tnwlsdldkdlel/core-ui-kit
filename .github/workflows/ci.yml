@@ -26,10 +26,14 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: |
+          echo "Installing dependencies with --legacy-peer-deps..."
+          npm ci --legacy-peer-deps
+          echo "Dependencies installed successfully"
       
       - name: Run ESLint
         run: npm run lint
+        continue-on-error: false
       
       - name: TypeScript type check
         run: npx tsc --noEmit
@@ -66,10 +70,14 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: |
+          echo "Installing dependencies with --legacy-peer-deps..."
+          npm ci --legacy-peer-deps
+          echo "Dependencies installed successfully"
       
       - name: Build project
         run: npm run build
+        continue-on-error: false
       
       - name: Upload build artifacts
         uses: actions/upload-artifact@v5
@@ -93,10 +101,14 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: |
+          echo "Installing dependencies with --legacy-peer-deps..."
+          npm ci --legacy-peer-deps
+          echo "Dependencies installed successfully"
       
       - name: Build Storybook
         run: npm run build-storybook
+        continue-on-error: false
       
       - name: Upload Storybook build
         uses: actions/upload-artifact@v5
