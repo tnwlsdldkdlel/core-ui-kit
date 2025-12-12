@@ -374,7 +374,7 @@ describe('Dropdown', () => {
         expect(options.length).toBeGreaterThan(0)
       })
 
-      const listbox = getDropdownContentFromBody()
+      const listbox = getDropdownContentFromBody() as HTMLElement
       if (listbox) {
         // listbox에 포커스 주기
         listbox.focus()

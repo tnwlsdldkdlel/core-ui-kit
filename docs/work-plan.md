@@ -112,30 +112,33 @@
   - 접근성 테스트
 
 #### 2.3 Dropdown 컴포넌트
-- [ ] Dropdown 컴포넌트 구현
+- [x] Dropdown 컴포넌트 구현
   - Portal 사용
   - 트리거 (Button/IconButton) 지원
   - 외부 클릭, ESC 입력 시 닫힘
-- [ ] 키보드 상호작용 구현
+- [x] 키보드 상호작용 구현
   - Enter/Space: 토글/선택
   - ArrowDown/ArrowUp: 항목 탐색 (Roving Tabindex)
   - Home/End: 첫/마지막 항목으로 이동
-- [ ] 포커스 관리
+- [x] 포커스 관리
   - Roving Tabindex 방식
   - 열릴 때 선택된 항목 또는 첫 번째 활성화 항목으로 포커스 이동
-- [ ] 접근성 구현
+- [x] 접근성 구현
   - 트리거: aria-haspopup="listbox", aria-expanded
   - 콘텐츠: role="listbox"
   - 항목: role="option"
-- [ ] Storybook Stories 작성
+- [x] Storybook Stories 작성
   - 다양한 옵션 구성
   - 키보드 상호작용 데모
   - A11y Addon 검사
-- [ ] 테스트 작성
+- [x] 테스트 작성
   - Portal 렌더링 테스트
   - 키보드 내비게이션 테스트
   - 선택 동작 테스트
   - 접근성 테스트
+- [x] 긴 옵션 목록 스크롤 기능 추가
+  - 커스텀 스크롤바 스타일 (Webkit 및 Firefox 지원)
+  - 포커스 이동 시 자동 스크롤
 
 #### 2.4 Tabs 컴포넌트
 - [ ] Tabs 컴포넌트 구현
@@ -160,11 +163,12 @@
   - 접근성 테스트
 
 ### 완료 기준 (Definition of Done)
-- [ ] Modal, Dropdown, Tabs 컴포넌트 구현 완료
-- [ ] 모든 컴포넌트의 포커스 관리 및 키보드 내비게이션 정상 작동
-- [ ] Storybook Docs 페이지 완성
-- [ ] 필수 상호작용 시나리오 테스트 통과
-- [ ] A11y Addon 검사 통과
+- [x] Modal, Dropdown 컴포넌트 구현 완료
+- [ ] Tabs 컴포넌트 구현 완료
+- [x] Modal, Dropdown의 포커스 관리 및 키보드 내비게이션 정상 작동
+- [x] Modal, Dropdown의 Storybook Docs 페이지 완성
+- [x] Modal, Dropdown의 필수 상호작용 시나리오 테스트 통과
+- [x] Modal, Dropdown의 A11y Addon 검사 통과
 - [ ] 코드 리뷰 및 리팩토링 완료
 
 ### 예상 기간
